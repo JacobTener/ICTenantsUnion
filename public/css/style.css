@@ -134,7 +134,7 @@ p {
 }
 
 .about-showcase {
-    height: 536px;
+    min-height: 536px;
 }
 /* Cards */
 .card-headings {
@@ -231,6 +231,10 @@ footer {
 
 .text-sm {
     font-size: 12px;
+}
+
+.text-md {
+    font-size: 13.8px;
 }
 .b-top {
     border-top: var(--light-color) 1px solid;
