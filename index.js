@@ -1,6 +1,7 @@
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
+require('dotenv/config');
 
 const server = http.createServer((req, res) => {
   //build filepath
@@ -63,4 +64,24 @@ const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
   console.log(`Server running on port: ${port}`);
+});
+
+
+
+//Connect to DB
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = process.env.DB_CONNECTION;
+const client = new MongoClient(uri, { useNewUrlParser: true});
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+
+  collection.insertOne(
+    {
+      name: "test"
+    }
+  );
+
+  // perform actions on the collection object
+  client.close();
 });
