@@ -154,8 +154,13 @@ p {
 
 .card-headings h4 {
     color: var(--primary-color);
+}
+
+.headings-dark h4 {
+    color:  #d3aa96;
 
 }
+
 .card-headings .btn-outline-border {
     border-right: var(--light-color) 1px solid;
 }
@@ -167,9 +172,13 @@ p {
 .card-body {
     display:none;
 }
-.active {
+.active-card {
     display: inline;
     padding: 6px;
+}
+.active :first-child{
+     color: var(--primary-color);
+    
 }
 
 /* Crossbar */
@@ -240,9 +249,12 @@ footer {
 
 /* Mobile */
 @media(max-width: 500px) {
+    .container {
+        padding: 0 10px;
+    }
     .navbar {
-        height: 120px;
-         overflow: hide;
+        height: auto;
+        width: auto;
     }
 
     
@@ -256,8 +268,8 @@ footer {
     
     nav a {
         color: var(--dark-color);
-        padding: 10px;
-        margin: 0 5px;
+        padding: 0;
+        margin: 0;
         font-weight: bold;
     }
     

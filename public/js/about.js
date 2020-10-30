@@ -6,39 +6,48 @@ const presentCard = document.getElementById('present-card');
 const purposeCard = document.getElementById('purpose-card');
 
 history.addEventListener('click', (e) => {
-    if(historyCard.classList.contains("active")){}
+    if(historyCard.classList.contains("active-card")){}
     else {
-        historyCard.classList.add("active");
-        if(presentCard.classList.contains("active")){
-            presentCard.classList.remove("active");
+        history.classList.add("active");
+        historyCard.classList.add("active-card");
+        if(presentCard.classList.contains("active-card")){
+            present.classList.remove("active");
+            presentCard.classList.remove("active-card");
         }
-        else if(purposeCard.classList.contains("active")){
-            purposeCard.classList.remove("active");
+        else if(purposeCard.classList.contains("active-card")){
+            purpose.classList.remove("active");
+            purposeCard.classList.remove("active-card");
         }
     }
 })
 
 present.addEventListener('click', (e) => {
-    if(presentCard.classList.contains("active")){}
+    if(presentCard.classList.contains("active-card")){}
     else {
-        presentCard.classList.add("active");
-        if(historyCard.classList.contains("active")){
-            historyCard.classList.remove("active");
+        present.classList.add("active");
+        presentCard.classList.add("active-card");
+        if(historyCard.classList.contains("active-card")){
+            history.classList.remove("active");
+            historyCard.classList.remove("active-card");
         }
-        else if(purposeCard.classList.contains("active")){
-            purposeCard.classList.remove("active");
+        else if(purposeCard.classList.contains("active-card")){
+            purpose.classList.remove("active");
+            purposeCard.classList.remove("active-card");
         }
     }
 })
 purpose.addEventListener('click', (e) => {
-    if(purposeCard.classList.contains("active")){}
+    if(purposeCard.classList.contains("active-card")){}
     else {
-        purposeCard.classList.add("active");
-        if(historyCard.classList.contains("active")){
-            historyCard.classList.remove("active");
+        purpose.classList.add("active");
+        purposeCard.classList.add("active-card");
+        if(historyCard.classList.contains("active-card")){
+            history.classList.remove("active");
+            historyCard.classList.remove("active-card");
         }
-        else if(presentCard.classList.contains("active")){
-            presentCard.classList.remove("active");
+        else if(presentCard.classList.contains("active-card")){
+            present.classList.remove("active");
+            presentCard.classList.remove("active-card");
         }
     }
 })

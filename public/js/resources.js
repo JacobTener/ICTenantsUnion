@@ -8,37 +8,37 @@ const covidCard = document.querySelector('.covid19-card');
 const moveInCard = document.querySelector('.move-in-card');
 
 fairHousing.addEventListener('click', (e) => {
-    if(fairHousingCard.classList.contains("active")){
-        fairHousingCard.classList.remove("active");
+    if(fairHousingCard.classList.contains("active-card")){
+        fairHousingCard.classList.remove("active-card");
     }
     else {
-        fairHousingCard.classList.add("active");
+        fairHousingCard.classList.add("active-card");
     }
 })
 
 securityDeposit.addEventListener('click', (e) => {
-    if(securityDepositCard.classList.contains("active")){
-        securityDepositCard.classList.remove("active");
+    if(securityDepositCard.classList.contains("active-card")){
+        securityDepositCard.classList.remove("active-card");
     }
     else {
-        securityDepositCard.classList.add("active");
+        securityDepositCard.classList.add("active-card");
     }
 })
 
 covid.addEventListener('click', (e) => {
-    if(covidCard.classList.contains("active")){
-        covidCard.classList.remove("active");
+    if(covidCard.classList.contains("active-card")){
+        covidCard.classList.remove("active-card");
     }
     else {
-        covidCard.classList.add("active");
+        covidCard.classList.add("active-card");
     }
 })
 
 moveIn.addEventListener('click', (e) => {
-    if(moveInCard.classList.contains("active")){
-        moveInCard.classList.remove("active");
+    if(moveInCard.classList.contains("active-card")){
+        moveInCard.classList.remove("active-card");
     }
     else {
-        moveInCard.classList.add("active");
+        moveInCard.classList.add("active-card");
     }
 })
