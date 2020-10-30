@@ -214,10 +214,10 @@ footer {
 /* Tablets and under */
 @media(max-width: 768px) {
     .container {
-        padding: 0 20px;
+        padding: auto;
         overflow: hidden;
     }
-    
+
     .showcase > .flex{
       flex-direction: column;
         gap: 0px;
@@ -253,8 +253,17 @@ footer {
         margin-top: 1rem;
     }
 
+    nav li {
+        flex: 1;
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        margin: .4rem;
+    }
+
     .nav a:hover {
         border-bottom: none;
+        transform: scale(0.98);
     }
 
 }
@@ -267,15 +276,8 @@ footer {
         width: auto;
         overflow: hidden;
     }
-
     
-    
-
-    nav li {
-        border: var(--light-color) solid 2px;
-    }
-    
-    nav a {
+    .nav a {
         color: var(--dark-color);
         padding: 0;
         margin: 0;
