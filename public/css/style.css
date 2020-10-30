@@ -190,6 +190,11 @@ p {
     text-align: center;
 }
 
+.protected-groups {
+    padding-bottom: .8rem;
+    text-decoration: underline;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
