@@ -295,6 +295,10 @@ footer {
         display: none;
     }
     
+    .about-showcase {
+        padding: 0;
+    }
+    
     .resources-container {
         width: 100%;
         margin: 0;
