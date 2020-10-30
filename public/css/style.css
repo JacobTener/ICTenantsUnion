@@ -72,14 +72,14 @@ p {
     display: flex;
 }
 
-nav a {
+.nav a {
     color: var(--dark-color);
     padding: 10px;
     margin: 0 5px;
     font-weight: bold;
 }
 
-nav a:hover {
+.nav a:hover {
     border-bottom: 2px var(--primary-color) solid;
 }
 
@@ -169,6 +169,7 @@ nav a:hover {
 }
 .active {
     display: inline;
+    padding: 6px;
 }
 
 /* Crossbar */
