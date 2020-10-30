@@ -295,4 +295,9 @@ footer {
         display: none;
     }
     
+    .resources-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 }
