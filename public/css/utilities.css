@@ -8,9 +8,15 @@
 .flex-col {
     flex: 1;
 }
+
 .flex-col-lg {
     flex:2;
 }
+
+.flex-wrap {
+    display: block;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

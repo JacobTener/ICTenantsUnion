@@ -171,6 +171,7 @@ p {
 /* Card Body Display */
 .card-body {
     display:none;
+    line-height: 1.4rem;
 }
 .active-card {
     display: inline;
@@ -285,6 +286,9 @@ footer {
         text-align: center;
     }
     
+    .flex-row {
+        flex-direction: column;
+    }
 
     
     .navbar .flex {
@@ -298,7 +302,7 @@ footer {
     .about-showcase {
         padding: 0;
     }
-    
+
     .resources-container {
         width: 100%;
         margin: 0;
