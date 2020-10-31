@@ -168,15 +168,18 @@ p {
 .covid19-card, .move-in-card {
     text-align: center;
 }
+
 /* Card Body Display */
 .card-body {
     display:none;
     line-height: 1.4rem;
 }
+
 .active-card {
     display: inline;
     padding: 6px;
 }
+
 .active :first-child{
      color: var(--primary-color);
     
@@ -286,11 +289,6 @@ footer {
         text-align: center;
     }
     
-    .flex-row {
-        flex-direction: column;
-    }
-
-    
     .navbar .flex {
         justify-content: space-between;
     }
@@ -307,5 +305,24 @@ footer {
         width: 100%;
         margin: 0;
         padding: 0;
+    }
+
+    .flex-row {
+        flex-direction: column;
+    }
+    .flex-row > .mx-5 {
+        margin: 0 2rem;
+    }
+
+    .example-text {
+        border-top: 1px solid var(--light-color);
+    }
+
+    .deposit-titles, .move-in-titles {
+        font-size: 1.1rem;
+    }
+
+    .deposit-text, .move-in-text {
+        margin-bottom: 1rem;
     }
 }
