@@ -217,6 +217,10 @@ p {
     text-decoration: underline;
 }
 
+.move-in-titles, .move-in-text {
+    text-align: left;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
