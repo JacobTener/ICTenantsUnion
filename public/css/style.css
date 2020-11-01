@@ -15,12 +15,14 @@
     margin: 0;
     padding: 0;
 }
-
+html {
+    min-height: 100%;
+    position: relative;
+}
 .body {
     color: #333;
     line-height: 1.6;
 }
-
 ul {
     list-style-type: none;
 }
@@ -41,6 +43,13 @@ p {
     margin: 10px 0;
 }
 
+.wrapper {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 160px; /* height of your footer */
+}
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -211,12 +220,21 @@ p {
 /* Footer */
 footer {
     background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   
 }
 
 
 
 /* Tablets and under */
 @media(max-width: 768px) {
+
+    .wrapper {
+        padding-bottom: 180px;
+    }
+
     .container {
         padding: auto;
         overflow: hidden;
@@ -270,11 +288,18 @@ footer {
         transform: scale(0.98);
     }
 
+    .tablet-col {
+        flex-direction: column;
+    }
+
 }
 
 /* Mobile */
 @media(max-width: 500px) {
     
+    .wrapper {
+        padding-bottom: 240px;
+    }
     .navbar {
         height: auto;
         width: auto;
