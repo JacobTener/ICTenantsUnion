@@ -98,7 +98,7 @@ p {
 
 /* Hero */
 .hero {
-    background: url("../img/nate-watson-Ib_nblJ2Jis-unsplash.jpg") center ;
+    background: url("../img/nate-watson-Ib_nblJ2Jis-unsplash.jpg") center, rgb(0, 0, 0, .8) ;
     height: 550px;
     
 }
@@ -187,6 +187,7 @@ p {
 .active-card {
     display: inline;
     padding: 6px;
+   
 }
 
 .active :first-child{
