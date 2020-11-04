@@ -1,0 +1,66 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet', href='/css/utilities.css')
+  link(rel='stylesheet', href='/css/style.css')
+  script(src='https://kit.fontawesome.com/ba48108ed1.js' crossorigin='anonymous')
+  title Iowa City Tenants Union | Housing is a Human Right
+.wrapper
+  // Navbar
+  .navbar
+    .container.flex
+      a(href='index.html')
+        img.logo(src='/img/unionpic.jpg' alt='Iowa City Tenants Union')
+      nav.nav
+        ul
+          li
+            a(href='/index.html') Home
+          li
+            a(href='/about.html') About Us
+          li
+            a(href='/resources.html') Tenant Resources
+          li
+            a(href='/ratings') Landlord Reviews
+  // Showcase
+  section.showcase.about-showcase.b-top
+    .container.flex
+      table(style='width:100%', border='1')
+        tr
+          th Landlord
+          th Stars
+          th Description
+          th Date
+        each rating, i in ratings
+          tr
+            td #{rating.landlord}
+            td #{rating.stars}
+            td #{rating.description}
+            td #{rating.date}
+    .container.flex
+      a.btn.m-2(href='/ratings/add') Add a Rating
+      a.btn.m-2(href='/ratings') Back to Ratings
+
+
+  footer.footer.bg-dark.py-4
+    .container.grid.grid-3
+      div
+        h2 Iowa City Tenants Union
+        p Copyright &copy; 2020
+      nav
+        ul
+          li
+            a(href='/index.html') Home
+          li
+            a(href='/about.html') About Us
+          li
+            a(href='/resources.html') Tenant Resources
+          li
+            a(href='/ratings') Landlord Reviews
+      .social.text-center
+        a.mx-1(href='https://mail.google.com/mail/?view=cm&source=mailto&to=iowacitytenantsunion@gmail.com' target='_blank')
+          i.fas.fa-envelope.fa-2x
+        a.mx-1(href='https://www.facebook.com/IowaCityTenantsUnion' target='_blank')
+          i.fab.fa-facebook.fa-2x
+        a.mx-1(href='https://twitter.com/ICTenantsUnion' target='_blank')
+          i.fab.fa-twitter.fa-2x

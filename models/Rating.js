@@ -5,15 +5,15 @@ const mongoose = require('mongoose');
 const ratingSchema = mongoose.Schema({
     landlord : {
         type: String,
-        required: true
+        required: [true, 'Specify a landlord please'],
     },
     stars : {
         type: Number,
-        required: true
+        required: [true, 'Add a rating please']
     },
     description : {
         type: String,
-        required: true
+        required: false
     },
     date: {
         type: Date,

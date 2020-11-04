@@ -1,35 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const Rating = require('../models/Rating');
 
+const { getRatings, postRatings, deleteRatings, indvRatings } = require("../controllers/ratingsController")
 
 //Routes
-router.get('/', async (req, res) => {
-    try {
-        const ratings = await Rating.find();
-        res.json(ratings);
-    
-    } catch (err) {
-        res.json({message: err });
-    }
+router.route('/').get(getRatings);
 
-});
+router.route('/').post(postRatings);
 
-router.post('/', async (req, res) => {
-    const rating = new Rating({
-        landlord: req.body.landlord,
-        stars: req.body.stars,
-        description: req.body.description
-    });
-    console.log(rating)
-    try{
-        const savedRating = await rating.save()
-        res.json(savedRating);
-    }
-    catch(err){
-        res.json({message:err});
-    }
+router.route('/delete/:id').delete(deleteRatings);
 
-});
+router.get('/add', (req, res) => {
+    res.render('add_rating', {
+        // landlord: landlord
+    })
+})
 
+router.route('/:id').get(indvRatings);
+
+
+// router.route('/')
 module.exports = router;
