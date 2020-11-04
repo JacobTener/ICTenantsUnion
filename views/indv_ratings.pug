@@ -25,12 +25,12 @@ head
   // Showcase
   section.showcase.about-showcase.b-top
     .container.flex
-      table(style='width:100%', border='1')
+      table.table.table-striped
         tr
-          th Landlord
-          th Stars
-          th Description
-          th Date
+          th(scope='col') Landlord
+          th(scope='col') Stars
+          th(scope='col') Description
+          th(scope='col') Date
         each rating, i in ratings
           tr
             td #{rating.landlord}
@@ -38,7 +38,7 @@ head
             td #{rating.description}
             td #{rating.date}
     .container.flex
-      a.btn.m-2(href='/ratings/add') Add a Rating
+      a.btn.m-2(href='/ratings/add?name=' + ratings[0].landlord) Add a Rating
       a.btn.m-2(href='/ratings') Back to Ratings
 
 

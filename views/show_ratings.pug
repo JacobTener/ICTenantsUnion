@@ -25,21 +25,25 @@ head
   // Showcase
   section.showcase.about-showcase.b-top
     .container.flex
-      table(style='width:100%', border='1')
-        tr
-          th Landlord
-          th Stars
-          th # of Reviews
-          th Most Recent Rating
-          th Date
-        each rating, i in ratings
+      input#filterLandlords(type='text' placeholder='Filter Landlords')
+    .container.flex
+      table.table.table-striped
+        thead
           tr
-            td
-              a.btn(href="/ratings/"+ rating.docid) #{rating._id}
-            td #{rating.avgstars}
-            td #{rating.count}
-            td #{rating.lstdesc}
-            td #{rating.lstdate}
+            th(scope='col') Landlord
+            th(scope='col') Avg. Stars
+            th(scope='col') # of Reviews
+            th(scope='col') Most Recent Review
+            th(scope='col') Date
+        tbody
+          each rating, i in ratings
+            tr.table-row
+              td.landlord(scope='row')
+                a(href="/ratings/"+ rating.docid).table-names #{rating._id}
+              td.avg-stars #{rating.avgstars}
+              td.count #{rating.count}
+              td.lst-desc #{rating.lstdesc}
+              td.lst-date #{rating.lstdate}
     .container.flex
       a.btn.m-2(href='/ratings/add') Add a Rating
 
@@ -66,3 +70,4 @@ head
           i.fab.fa-facebook.fa-2x
         a.mx-1(href='https://twitter.com/ICTenantsUnion' target='_blank')
           i.fab.fa-twitter.fa-2x
+script(src='/js/rating.js')

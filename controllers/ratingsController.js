@@ -14,6 +14,9 @@ exports.getRatings = async (req, res, next) => {
             docid: {$first: "$_id"},
             count: {$sum: 1 }
         });
+        ratings.forEach((r) => {
+            r.lstdate = r.lstdate.toDateString();
+        })
 
         return res.render('show_ratings', {
             ratings: ratings
@@ -101,6 +104,10 @@ exports.indvRatings = async (req, res, next) => {
         //2 Queries instead of one as to not pass names in URL
         const landlord = await Rating.findById(req.params.id);
         const ratings = await Rating.find({ landlord: landlord.landlord });
+        
+        ratings.forEach((r) => {
+            r.date = r.date.toString();
+        })
 
         return res.render('indv_ratings', {
             ratings: ratings

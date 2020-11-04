@@ -27,12 +27,19 @@ head
     .container.flex
       form(method="POST", action='/ratings')
         label(for='landlord') Landlord:
-        input#landlord(type='text' name='landlord')
+        input#landlord(type='text' name='landlord' value='')
         label(for='stars') Stars:
-        input#stars(type='number' name='stars')
+        select#stars(name='stars')
+          option(value='1') 1
+          option(value='2') 2
+          option(value='3') 3
+          option(value='4') 4
+          option(value='5') 5
         label(for='description') Description:
         input#description(type='text' name='description')
         input.btn.btn-primary(type='submit', value='submit')
+    .container.flex
+      a.btn.m-2(href='/ratings') Back to Ratings
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div
@@ -55,3 +62,4 @@ head
           i.fab.fa-facebook.fa-2x
         a.mx-1(href='https://twitter.com/ICTenantsUnion' target='_blank')
           i.fab.fa-twitter.fa-2x
+script(src='/js/addrating.js')
