@@ -10,7 +10,7 @@ filterLandlords.addEventListener("input", (e) => {
    let row = document.querySelectorAll(".table-row");
 
   row.forEach((r) => {
-    let name = r.getElementsByTagName("a")[0];
+    let name = r.querySelector(".landlord")[0];
     if (name.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
       r.style.display = "";
     } else {

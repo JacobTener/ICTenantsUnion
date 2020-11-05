@@ -26,7 +26,11 @@ head
   // Showcase
   section.showcase.about-showcase.b-top
     .container.flex
-      input.flex-col-lg.form-control#filterLandlords(type='text' placeholder='Filter Landlords')
+      h1.mb-1 Anonymous Reviews of Johnson County Landlords
+    .container.flex
+      input.form-control#filterLandlords(type='text' placeholder='Filter Landlords')
+    .container.flex
+      p.my-1 Search for a landlord to find detailed reviews or add a new review
       
     .container.flex
       table.table.table-striped
@@ -35,19 +39,20 @@ head
             th(scope='col') Landlord
             th(scope='col') # of Reviews
             th(scope='col') Avg. Rating
-            th(scope='col') Most Recent Review
-            th(scope='col') Date
+            th(scope='col') Last Review On
+            th(scope='col') Details/Review
         tbody
           each rating, i in ratings
             tr.table-row
-              td.landlord(scope='row')
-                a(href="/ratings/"+ rating.docid).table-names #{rating._id}
+              td.landlord(scope='row') #{rating._id}
               td.count #{rating.count}  
               td.avg-stars #{rating.avgstars}       
-              td.lst-desc #{rating.lstdesc}
               td.lst-date #{rating.lstdate}
+              td
+                a(href="/ratings/"+ rating.docid).table-details.hvr-sweep-to-right 
+                  i.fas.fa-2x.fa-arrow-circle-right
     .container.flex
-      a.btn.m-2(href='/ratings/add') Add a new Review
+      a.btn.m-2(href='/ratings/add') Add a new Landlord
 
 
   footer.footer.bg-dark.py-4

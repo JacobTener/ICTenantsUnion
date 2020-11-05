@@ -97,10 +97,10 @@ p {
 }
 
 /* Hero */
-.hero {
-    background: url("../img/nate-watson-Ib_nblJ2Jis-unsplash.jpg") center, rgb(0, 0, 0, .8) ;
+.hero {    
+
+    background: linear-gradient( rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) ), url("../img/nate-watson-Ib_nblJ2Jis-unsplash.jpg") center;
     height: 550px;
-    
 }
 
 .hero-text {
@@ -235,6 +235,7 @@ th {
     max-width: 100%;
     margin-bottom: 1rem;
     background-color: transparent;
+    border-bottom: 1px #dee2e6 solid;
 }
 
 .table th,
@@ -261,14 +262,61 @@ th {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.table-names {
+.table-details {
     color: var(--primary-color);
 }
 
-.table-names:hover {
-    border-bottom: 1px var(--primary-color) solid;
-
+.table-details:hover {
+    opacity: .9;
+    box-shadow: yellow;
 }
+
+/* Add rating */
+#description {
+    width: 422px; 
+    height: 128px
+}
+
+/* Sweep To Right From https://ianlunn.github.io/Hover/  */
+.hvr-sweep-to-right {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .hvr-sweep-to-right:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-color);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+    color: white;
+  }
+  .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
 
 /* Footer */
 footer {
