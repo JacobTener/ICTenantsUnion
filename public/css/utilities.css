@@ -48,6 +48,12 @@
     border: 1px #fff solid;
 }
 
+.btn-blk-outline {
+    background-color: transparent;
+    border: 2px #000 solid;
+    color:#000;
+}
+
 .btn:hover {
     transform: scale(0.98);
 }
@@ -61,6 +67,38 @@
     margin: 10px; 
 
 }
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+  }
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
 
 .text-center {
     text-align: center;

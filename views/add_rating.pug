@@ -2,6 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='shortcut icon' href='img/favicon.ico')
   link(rel='stylesheet', href='/css/utilities.css')
   link(rel='stylesheet', href='/css/style.css')
   script(src='https://kit.fontawesome.com/ba48108ed1.js' crossorigin='anonymous')
@@ -37,9 +38,9 @@ head
           option(value='5') 5
         label(for='description') Description:
         input#description(type='text' name='description')
-        input.btn.btn-primary(type='submit', value='submit')
-    .container.flex
-      a.btn.m-2(href='/ratings') Back to Ratings
+        .container.flex
+          input.btn.btn-primary(type='submit', value='submit')
+          a.btn.btn-blk-outline.m-2(href='/ratings') Back to Reviews
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div

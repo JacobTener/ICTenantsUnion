@@ -13,6 +13,9 @@ exports.getRatings = async (req, res, next) => {
             lstdate: {$last: "$date"},
             docid: {$first: "$_id"},
             count: {$sum: 1 }
+        })
+        .sort({
+            count: -1
         });
         ratings.forEach((r) => {
             r.lstdate = r.lstdate.toDateString();
