@@ -189,14 +189,19 @@ p {
 
 /* Card Body Display */
 .card-body {
-    display:none;
     line-height: 1.4rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-out;
+
+
 }
 
 .active-card {
-    display: inline;
     padding: 6px;
-   
+    max-height: 400px;
+    transition: max-height .5s ease-in;
+
 }
 
 .active :first-child{
@@ -235,6 +240,7 @@ p {
 table {
     border-collapse: collapse;
 }
+
 th {
     text-align: inherit;
 }
@@ -373,6 +379,10 @@ footer {
         align-self: center;
         text-align: center;
         margin: .4rem;
+    }
+
+    .nav a {
+        text-align: center;
     }
 
     .nav a:hover {
