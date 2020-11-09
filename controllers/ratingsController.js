@@ -16,7 +16,9 @@ exports.getRatings = async (req, res, next) => {
             count: {$sum: 1 }
         })
         .sort({
-            count: -1
+            avgstars: -1,
+            count: -1,
+            _id: -1
         });
 
         ratings.forEach((r) => {

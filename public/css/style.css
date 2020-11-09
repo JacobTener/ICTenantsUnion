@@ -193,8 +193,6 @@ p {
     max-height: 0;
     overflow: hidden;
     transition: max-height .5s ease-out;
-
-
 }
 
 .active-card {
@@ -342,6 +340,8 @@ footer {
       flex-direction: column;
         gap: 0px;
     }
+    
+    
 
     .tablet-second {
         order:2;
@@ -382,7 +382,7 @@ footer {
     }
 
     .nav a {
-        text-align: center;
+        
     }
 
     .nav a:hover {
@@ -397,6 +397,11 @@ footer {
     .date-header, .date-body {
         display: none;
     }
+
+    .back-btn {
+        order: 2;
+    }
+
 
 }
 
@@ -426,6 +431,15 @@ footer {
 
     .showcase-img {
         display: none;
+    }
+    
+    .home-showcase{
+        margin: 0;
+        padding: 1rem 1rem 0 1rem;
+    }
+
+    .top-showcase {
+        margin-bottom: 0;
     }
     
     .about-showcase {

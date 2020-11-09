@@ -43,7 +43,7 @@ head
             td #{rating.description}
             td.date-body #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
     .container.flex
-      a.btn.btn-blk-outline.m-2(href='/ratings') Back to Reviews
+      a.btn.btn-blk-outline.m-2.back-btn(href='/ratings') Back to Reviews
       a.btn.m-2(href='/ratings/add?name=' + ratings[0].landlord) Add a review for #{ratings[0].landlord}
 
 
