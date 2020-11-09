@@ -1,4 +1,5 @@
 const Rating = require('../models/Rating');
+const moment = require('moment');
 
 // @desc Get all ratings
 // @route Get /ratings
@@ -17,13 +18,15 @@ exports.getRatings = async (req, res, next) => {
         .sort({
             count: -1
         });
+
         ratings.forEach((r) => {
+            if(r.avgstars.toString().length > 3) r.avgstars = r.avgstars.toPrecision(3);
             r.lstdate = r.lstdate.toDateString();
         })
 
         return res.render('show_ratings', {
             ratings: ratings
-            });
+        });
             
     } catch (err) {
         return res.status(500).json({
@@ -39,9 +42,13 @@ exports.getRatings = async (req, res, next) => {
 // @route Post /ratings
 // @access Public
 exports.postRatings = async (req, res, next) => {
+    let landlordInput = req.body.landlord.split(" ");
+    
     try{
     const rating = new Rating({
-        landlord: req.body.landlord,
+        landlord: landlordInput.map((name) => { 
+            return name[0].toUpperCase() + name.substring(1); 
+        }).join(" "),
         stars: req.body.stars,
         description: req.body.description
     });  
@@ -108,10 +115,6 @@ exports.indvRatings = async (req, res, next) => {
         const landlord = await Rating.findById(req.params.id);
         const ratings = await Rating.find({ landlord: landlord.landlord });
         
-        ratings.forEach((r) => {
-            r.date = r.date.toString();
-        })
-
         return res.render('indv_ratings', {
             ratings: ratings
         });

@@ -129,6 +129,10 @@ p {
     gap: 50px;
 }
 
+.top-showcase {
+    margin-bottom: 2rem;
+}
+
 .showcase-img {
     flex: 1;
     
@@ -151,6 +155,11 @@ p {
     align-self: flex-start;
     margin-top: 2rem;
 }
+
+.about-img {
+    width: 500px;
+}
+
 .mission li, .action li {
     padding-bottom: 4px;
 }
@@ -275,6 +284,11 @@ th {
 #description {
     width: 422px; 
     height: 128px
+}
+
+.sub-btn {
+    font-size: 16px;
+    padding: 12px 40px;
 }
 
  

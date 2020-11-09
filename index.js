@@ -37,7 +37,10 @@ app.use(bodyParser.json());
 
 //Routes
 app.use('/ratings', ratingRoutes);
-app.use(express.static("public"));
+app.use(express.static("public",
+{
+  extensions: ['html']
+}));
 
 
 const port = process.env.PORT || 5000;

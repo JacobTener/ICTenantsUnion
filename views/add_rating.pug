@@ -11,20 +11,22 @@ head
   // Navbar
   .navbar
     .container.flex
-      a(href='index.html')
+      a(href='index')
         img.logo(src='/img/unionpic.jpg' alt='Iowa City Tenants Union')
       nav.nav
         ul
           li
-            a(href='/index.html') Home
+            a(href='/index') Home
           li
-            a(href='/about.html') About Us
+            a(href='/about') About Us
           li
-            a(href='/resources.html') Tenant Resources
+            a(href='/resources') Tenant Resources
           li
             a(href='/ratings') Landlord Reviews
   // Showcase
   section.showcase.about-showcase.b-top
+    .container.flex
+      h1.mb-2 Add a New Review
     .container.flex
       form(method="POST", action='/ratings')
         .container.flex
@@ -44,7 +46,7 @@ head
           textarea#description(name='description').flex-col-lg.form-control.my-1
         .container.flex
           a.btn.btn-blk-outline.m-2(href='/ratings') Back to Reviews
-          input.btn.btn-primary(type='submit', value='submit')
+          input.btn.btn-primary.sub-btn(type='submit', value='Submit Review')
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div
@@ -53,11 +55,11 @@ head
       nav
         ul
           li
-            a(href='/index.html') Home
+            a(href='/index') Home
           li
-            a(href='/about.html') About Us
+            a(href='/about') About Us
           li
-            a(href='/resources.html') Tenant Resources
+            a(href='/resources') Tenant Resources
           li
             a(href='ratings') Landlord Reviews
       .social.text-center
