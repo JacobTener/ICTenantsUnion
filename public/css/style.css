@@ -394,6 +394,10 @@ footer {
         flex-direction: column;
     }
 
+    .date-header, .date-body {
+        display: none;
+    }
+
 }
 
 /* Mobile */

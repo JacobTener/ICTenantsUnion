@@ -34,14 +34,14 @@ head
             th(scope='col') Landlord
             th(scope='col') Rating
             th(scope='col') Description
-            th(scope='col') Date
+            th.date-header(scope='col') Date
         tbody
         each rating, i in ratings
           tr
             td #{rating.landlord}
             td #{rating.stars}
             td #{rating.description}
-            td #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
+            td.date-body #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
     .container.flex
       a.btn.btn-blk-outline.m-2(href='/ratings') Back to Reviews
       a.btn.m-2(href='/ratings/add?name=' + ratings[0].landlord) Add a review for #{ratings[0].landlord}
