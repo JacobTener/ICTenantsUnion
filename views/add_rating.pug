@@ -32,8 +32,8 @@ head
           .container.flex.temp
             p.alert-msg #{a}
     .container.flex
-      form(method="POST", action='/ratings')     
-        .container.flex
+      form(method="POST", action='/ratings')   
+        .container.flex    
           label(for='landlord').flex-col Landlord:
           if landlord != null
             input#landlord(type='text' name='landlord' value=`${landlord}`).flex-col-lg.form-control.my-1
@@ -80,7 +80,9 @@ head
               option(value='4') 4
               option(value='5' selected) 5
         .container.flex
-          label(for='email') Enter your email:
+          label(for='email') 
+            .full-text Enter your email:
+            .short-text Email:
           if email != null
             input#email(type='email' name='email' value=`${email}`).flex-col-lg.form-control.my-1.email
           else
