@@ -154,6 +154,23 @@ exports.admin = async (req, res, next) => {
     }
 }
 
+exports.adminAll = async (req, res, next) => {
+    try {
+        const ratings = await Rating.find({})
+
+
+        return res.render('admin_all', {
+            ratings: ratings
+        });
+            
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            data: err 
+        });
+    }
+}
+
 exports.adminLogin = async (req, res, next) => {
     return res.render('login');
 }
@@ -216,7 +233,8 @@ function email(rating) {
         text: "Landlord: " + rating.landlord + " Rating: " + rating.stars + " Review Description: " + rating.description,
 
         // HTML body
-        html: `<p>Landlord: <b>${rating.landlord}</b><br> Rating: ${rating.stars} <br>Review Description: ${rating.description}</p>`
+        html: `<p>Landlord: <b>${rating.landlord}</b><br> Rating: ${rating.stars} <br>Review Description: ${rating.description}</p>
+        <br><br> Go to ictenantsunion.herokuapp.com/ratings/admin to log in and verify!`
     
     };
     

@@ -1,11 +1,11 @@
 //Module imports
+require('dotenv/config');
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-require('dotenv/config');
 const passport = require('passport');
 const initializePassport = require('./passport-config');
 const flash = require('express-flash');

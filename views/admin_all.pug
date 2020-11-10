@@ -26,7 +26,7 @@ head
   // Showcase
   section.showcase.about-showcase.b-top
     .container.flex
-      h1.mb-2 Verify Reviews
+      h1.mb-2 All Reviews
     .container.flex
       table.table.table-striped
         thead
@@ -35,7 +35,7 @@ head
             th(scope='col') Rating
             th(scope='col') Description
             th.date-header(scope='col') Date
-            th(scope='col').verify Verify
+            th(scope='col') Verified
             th(scope='col').delete Delete
         tbody
         each rating, i in ratings
@@ -44,19 +44,19 @@ head
             td #{rating.stars}
             td #{rating.description}
             td.date-body #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
-            td
-              form(action=`/ratings/admin/verify/${rating.id}` method='POST')
-                a.verify-tag.table-details.hvr-grow
-                  i.fas.fa-2x.fa-check
+            td 
+                if rating.verified 
+                    p Yes
+                else
+                    p No
             td
               form(action=`/ratings/delete/${rating.id}?_method=DELETE` method='POST')
                 a.del-tag.table-details.hvr-float-shadow
-                  i.fas.fa-2x.fa-trash-alt
-              
+                  i.fas.fa-2x.fa-trash-alt              
     .container.flex
-      form(action='/ratings/admin/logout?_method=DELETE' method='POST')
-        button.btn.btn-primary.sub-btn(type='submit') Log Out  
-      a.btn.btn-blk-outline.m-2(href='/ratings/admin/all') See all Reviews    
+        form(action='/ratings/admin/logout?_method=DELETE' method='POST')
+            button.btn.btn-primary.sub-btn(type='submit') Log Out  
+        a.btn.btn-blk-outline.m-2(href='/ratings/admin') See Unverified Reviews    
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div

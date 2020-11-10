@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const flash = require('express-flash');
 
-const { getRatings, postRatings, deleteRatings, indvRatings, admin, adminLogin, updateRating} = require("../controllers/ratingsController")
+const { getRatings, postRatings, deleteRatings, indvRatings, admin, adminLogin, updateRating, adminAll} = require("../controllers/ratingsController")
 
 //Routes
 router.route('/').get(getRatings);
@@ -45,9 +45,9 @@ router.delete('/admin/logout', (req, res) => {
 
 router.route('/admin/verify/:id').post(updateRating)
 
+router.route('/admin/all').all(checkAuthenticated).get(adminAll);
+
 router.route('/:id').get(indvRatings);
-
-
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
