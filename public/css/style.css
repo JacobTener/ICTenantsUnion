@@ -197,10 +197,11 @@ p {
 
 .active-card {
     padding: 6px;
-    max-height: 1000px;
+    max-height: 954px;
     transition: max-height .5s ease-in;
 
 }
+
 
 .active :first-child{
      color: var(--primary-color);
@@ -432,7 +433,7 @@ footer {
     .showcase-img {
         display: none;
     }
-    
+
     .home-showcase{
         margin: 0;
         padding: 1rem 1rem 0 1rem;
