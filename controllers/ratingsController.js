@@ -50,12 +50,18 @@ exports.getRatings = async (req, res, next) => {
 // @route Post /ratings
 // @access Public
 exports.postRatings = async (req, res, next) => {
+
     let landlordInput = req.body.landlord.split(" ");
-    
+
     try{
         const rating = new Rating({
             landlord: landlordInput.map((name) => { 
-                return name[0].toUpperCase() + name.substring(1); 
+                if(name != '') {
+                    return name[0].toUpperCase() + name.substring(1); 
+                }
+                else {
+                    return '';
+                }
             }).join(" "),
             stars: req.body.stars,
             email: req.body.email,
@@ -69,10 +75,9 @@ exports.postRatings = async (req, res, next) => {
     catch(err){
         if(err.name === "ValidationError") {
             const messages = Object.values(err.errors).map(val => val.message);
-
-            return res.status(400).json({
-                success: false,
-                error: messages
+            return res.render('add_rating',
+            {
+                messages: messages
             })
         }
         else {

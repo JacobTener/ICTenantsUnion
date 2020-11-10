@@ -296,6 +296,25 @@ th {
     padding: 12px 40px;
 }
 
+.temp {
+    animation: fade 1s;
+    animation-delay: 3s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.alert-msg {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background: var(--complimentary-red);
+}
  
 /* Forward  From https://ianlunn.github.io/Hover/ */
 .hvr-forward {

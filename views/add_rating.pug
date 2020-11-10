@@ -27,6 +27,10 @@ head
   section.showcase.about-showcase.b-top
     .container.flex
       h1.mb-2 Add a New Review
+    if messages.length > 0
+        each m in messages
+          .container.flex.temp
+            p.alert-msg #{m}
     .container.flex
       form(method="POST", action='/ratings')
         
