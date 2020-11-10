@@ -27,8 +27,13 @@ head
   section.showcase.about-showcase.b-top
     .container.flex
       h1.mb-2 Login
-    if(messages.error) 
-        #{messages.error}
+    .container.flex
+      if successes
+        for success in successes
+          div.alert.alert-success #{ success }
+      if errors
+        for error, i in errors
+          div.alert.alert-danger #{ error }
     .container.flex
       form(method="POST", action='/ratings/admin/login')
         .container.flex

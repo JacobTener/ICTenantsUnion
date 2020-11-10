@@ -48,7 +48,7 @@ p {
     overflow: hidden;
     display: block;
     position: relative;
-    padding-bottom: 160px; /* height of your footer */
+    padding-bottom: 180px; /* height of your footer */
 }
 .container {
     max-width: 1100px;
@@ -321,8 +321,8 @@ th {
 
 /* Add rating */
 #description {
-    width: 422px; 
-    height: 128px
+    width: 284px; 
+    height: 155px
 }
 
 .sub-btn {
@@ -441,7 +441,7 @@ footer {
 @media(max-width: 768px) {
 
     .wrapper {
-        padding-bottom: 180px;
+        padding-bottom: 220px;
     }
 
     .container {

@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const flash = require('express-flash');
 
 const { getRatings, postRatings, deleteRatings, indvRatings, admin, adminLogin, updateRating, adminAll} = require("../controllers/ratingsController")
 

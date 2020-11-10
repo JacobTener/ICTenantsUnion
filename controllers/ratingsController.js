@@ -3,7 +3,6 @@ const nodemailer = require('nodemailer');
 
 
 
-
 // @desc Get all verified ratings
 // @route Get /ratings
 // @access Public
@@ -70,6 +69,7 @@ exports.postRatings = async (req, res, next) => {
 
         const savedRating = await rating.save();
         email(rating);
+        req.flash('success', 'Review Submitted! Thank you.');
         res.redirect('/ratings');
     }
     catch(err){
@@ -77,7 +77,7 @@ exports.postRatings = async (req, res, next) => {
             const messages = Object.values(err.errors).map(val => val.message);
             return res.render('add_rating',
             {
-                messages: messages,
+                alerts: messages,
                 landlord: req.body.landlord,
                 stars: req.body.stars,
                 email: req.body.email,

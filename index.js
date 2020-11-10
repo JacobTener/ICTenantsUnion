@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const initializePassport = require('./passport-config');
-const flash = require('express-flash');
+const flash = require('connect-flash');
 const session = require('express-session');
 const methodOverride = require('method-override')
 
@@ -49,16 +49,32 @@ app.set('view engine', 'pug');
 const ratingRoutes = require("./routes/ratings");
 
 //Middleware
+
+//Body parser middleware
 app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
-app.use(flash());
+
+//Session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: true
 }));
+
+//Flash middleware
+app.use(flash());
+app.use((req, res, next) => {
+  res.locals.errors = req.flash("error");
+  res.locals.successes = req.flash("success");
+  next();
+});
+
+
+// Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Override middleware for delete req
 app.use(methodOverride('_method'));
 
 

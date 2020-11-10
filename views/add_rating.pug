@@ -27,13 +27,12 @@ head
   section.showcase.about-showcase.b-top
     .container.flex
       h1.mb-2 Add a New Review
-    if messages.length > 0
-        each m in messages
+    if alerts != null
+        each a in alerts
           .container.flex.temp
-            p.alert-msg #{m}
+            p.alert-msg #{a}
     .container.flex
-      form(method="POST", action='/ratings')
-        
+      form(method="POST", action='/ratings')     
         .container.flex
           label(for='landlord').flex-col Landlord:
           if landlord != null
@@ -95,7 +94,7 @@ head
           a.btn.btn-blk-outline.m-2(href='/ratings') Back to Reviews
           input.btn.btn-primary.sub-btn(type='submit', value='Submit Review')
         .container.flex 
-          p.text-sm (Our board will verify your review within 24 hours)
+          p.text-sm (To avoid spam, your review must be approved before it is displayed)
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div
