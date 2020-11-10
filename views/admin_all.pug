@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='shortcut icon' href='img/favicon.ico')
+  link(rel='shortcut icon' href='/img/favicon.ico')
   link(rel='stylesheet', href='/css/utilities.css')
   link(rel='stylesheet', href='/css/style.css')
   script(src='https://kit.fontawesome.com/ba48108ed1.js' crossorigin='anonymous')
@@ -35,7 +35,7 @@ head
             th(scope='col') Rating
             th(scope='col') Description
             th.date-header(scope='col') Date
-            th(scope='col') Verified
+            th(scope='col').adm-all-verify Verified
             th(scope='col').delete Delete
         tbody
         each rating, i in ratings
@@ -44,7 +44,7 @@ head
             td #{rating.stars}
             td #{rating.description}
             td.date-body #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
-            td 
+            td.adm-all-verify-body 
                 if rating.verified 
                     p Yes
                 else
@@ -55,8 +55,8 @@ head
                   i.fas.fa-2x.fa-trash-alt              
     .container.flex
         form(action='/ratings/admin/logout?_method=DELETE' method='POST')
-            button.btn.btn-primary.sub-btn(type='submit') Log Out  
-        a.btn.btn-blk-outline.m-2(href='/ratings/admin') See Unverified Reviews    
+            button.btn.btn-primary.sub-btn(type='submit').sm-order-2 Log Out  
+        a.btn.btn-blk-outline.m-2(href='/ratings/admin').sm-order-1 See Unverified Reviews    
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div

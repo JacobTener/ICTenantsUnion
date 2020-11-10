@@ -77,7 +77,11 @@ exports.postRatings = async (req, res, next) => {
             const messages = Object.values(err.errors).map(val => val.message);
             return res.render('add_rating',
             {
-                messages: messages
+                messages: messages,
+                landlord: req.body.landlord,
+                stars: req.body.stars,
+                email: req.body.email,
+                description: req.body.description
             })
         }
         else {
@@ -132,10 +136,8 @@ exports.indvRatings = async (req, res, next) => {
 
 
     } catch (err) {
-        return res.status(500).json({
-            success: false,
-            data: err 
-        });
+
+        return res.status(500).redirect('/ratings');
     }
 }
 
@@ -191,20 +193,7 @@ exports.updateRating = async (req, res, next) => {
         res.redirect('/ratings/admin')
     }
     catch(err){
-        if(err.name === "ValidationError") {
-            const messages = Object.values(err.errors).map(val => val.message);
-
-            return res.status(400).json({
-                success: false,
-                error: messages
-            })
-        }
-        else {
-            return res.status(500).json({
-                success: false,
-                data: err 
-            });
-        }
+        return res.status(500).redirect('/ratings/admin');
     }
 }
 

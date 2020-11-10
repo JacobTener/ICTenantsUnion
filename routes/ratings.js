@@ -10,7 +10,9 @@ router.route('/').get(getRatings);
 
 router.route('/').post(postRatings);
 
-router.route('/delete/:id').delete(deleteRatings);
+router.route('/delete/:id')
+    .all(checkAuthenticated)
+    .delete(deleteRatings);
 
 router.get('/add', (req, res) => {
     res.render('add_rating', {

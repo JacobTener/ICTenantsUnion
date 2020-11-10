@@ -188,6 +188,28 @@ p {
 }
 
 /* Card Body Display */
+.card-body-tab {
+    line-height: 1.4rem;
+    display:none;
+    /* max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-out; */
+}
+
+.active-card {
+    padding: 6px;
+    display: inline-block;
+    /* max-height: 648px;
+    transition: max-height .5s ease-in; */
+
+}
+
+.active :first-child{
+    color: var(--primary-color);
+   
+}
+
+/* Card body Display Resources */
 .card-body {
     line-height: 1.4rem;
     max-height: 0;
@@ -195,18 +217,26 @@ p {
     transition: max-height .5s ease-out;
 }
 
-.active-card {
+.active-card-sm {
     padding: 6px;
-    max-height: 954px;
+    max-height: 102px;
     transition: max-height .5s ease-in;
+}
 
+.active-card-md {
+    padding: 6px;
+    max-height: 386px;
+    transition: max-height .5s ease-in;
+}
+
+.active-card-lg {
+    padding: 6px;
+    max-height: 512px;
+    transition: max-height .5s ease-in;
 }
 
 
-.active :first-child{
-     color: var(--primary-color);
-    
-}
+
 
 /* Crossbar */
 .crossbar {
@@ -285,6 +315,10 @@ th {
     box-shadow: yellow;
 }
 
+.short-text {
+    display: none;
+}
+
 /* Add rating */
 #description {
     width: 422px; 
@@ -313,7 +347,7 @@ th {
 .alert-msg {
     padding: 10px 20px;
     border-radius: 3px;
-    background: var(--complimentary-red);
+    color: var(--complimentary-red);
 }
  
 /* Forward  From https://ianlunn.github.io/Hover/ */
@@ -460,13 +494,21 @@ footer {
         margin: .4rem;
     }
 
-    .nav a {
-        
-    }
-
     .nav a:hover {
         border-bottom: none;
         transform: scale(0.98);
+    }
+    
+    .active-card-md {
+        padding: 6px;
+        max-height: 504px;
+        transition: max-height .5s ease-in;
+    }
+    
+    .active-card-lg {
+        padding: 6px;
+        max-height: 924px;
+        transition: max-height .5s ease-in;
     }
 
     .tablet-col {
@@ -480,8 +522,18 @@ footer {
     .back-btn {
         order: 2;
     }
+    
+    .sm-order-1 {
+        order: -1;
+    }
 
+}
 
+/* Middle Breakpoint */
+@media(max-width: 615px) {
+     .security-deposit-card > .flex-row, .fair-housing-card > .flex-row{
+        flex-direction: column;
+    }
 }
 
 /* Mobile */
@@ -549,4 +601,22 @@ footer {
     .deposit-text, .move-in-text {
         margin-bottom: 1rem;
     }
+    .full-text {
+        display:none;
+    }
+
+    .short-text {
+        display: inline-block;
+    }
+    
+    .adm-delete, .adm-delete-body {
+        display: none;
+    }
+
+    .adm-all-verify, .adm-all-verify-body {
+        display: none;
+    }
+
+
+
 }

@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='shortcut icon' href='img/favicon.ico')
+  link(rel='shortcut icon' href='/img/favicon.ico')
   link(rel='stylesheet', href='/css/utilities.css')
   link(rel='stylesheet', href='/css/style.css')
   script(src='https://kit.fontawesome.com/ba48108ed1.js' crossorigin='anonymous')
@@ -41,6 +41,9 @@ head
             td #{rating.landlord}
             td #{rating.stars}
             td #{rating.description}
+              br
+              br
+              .short-text #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
             td.date-body #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
     .container.flex
       a.btn.btn-blk-outline.m-2.back-btn(href='/ratings') Back to Reviews

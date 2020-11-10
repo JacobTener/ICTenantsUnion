@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='shortcut icon' href='img/favicon.ico')
+  link(rel='shortcut icon' href='/img/favicon.ico')
   link(rel='stylesheet', href='/css/utilities.css')
   link(rel='stylesheet', href='/css/style.css')
   script(src='https://kit.fontawesome.com/ba48108ed1.js' crossorigin='anonymous')
@@ -40,7 +40,9 @@ head
             th(scope='col') # of Reviews
             th(scope='col') Avg. Rating
             th.date-header(scope='col') Last Review On
-            th(scope='col') Details/Review
+            th(scope='col') 
+              .full-text Details/Review
+              .short-text Details
         tbody
           each rating, i in ratings
             tr.table-row
