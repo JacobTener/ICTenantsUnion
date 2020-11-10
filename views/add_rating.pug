@@ -27,10 +27,10 @@ head
   section.showcase.about-showcase.b-top
     .container.flex
       h1.mb-2 Add a New Review
-    if alerts != null
-        each a in alerts
-          .container.flex.temp
-            p.alert-msg #{a}
+    if alerts 
+      each a in alerts
+        .container.flex
+          div.alert.alert-danger.temp #{a}
     .container.flex
       form(method="POST", action='/ratings')   
         .container.flex    
@@ -120,3 +120,5 @@ head
         a.mx-1(href='https://twitter.com/ICTenantsUnion' target='_blank')
           i.fab.fa-twitter.fa-2x
 script(src='/js/addrating.js')
+script(src='/js/hideAlerts.js')
+

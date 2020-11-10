@@ -344,11 +344,6 @@ th {
     }
 }
 
-.alert-msg {
-    padding: 10px 20px;
-    border-radius: 3px;
-    color: var(--complimentary-red);
-}
  
 /* Forward  From https://ianlunn.github.io/Hover/ */
 .hvr-forward {
@@ -609,6 +604,9 @@ footer {
         display: inline-block;
     }
     
+    #email {
+        margin-left: 2rem;
+    }
     
     .adm-delete, .adm-delete-body {
         display: none;

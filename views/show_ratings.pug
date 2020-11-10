@@ -28,10 +28,10 @@ head
     .container.flex
         if successes
           for success in successes
-            div.alert.alert-success #{ success }
+            div.alert.alert-success.temp #{ success }
         if errors
           for error, i in errors
-            div.alert.alert-danger #{ error }
+            div.alert.alert-danger.temp #{ error }
     .container.flex
       h1.mb-1.text-center Anonymous Reviews of Johnson County Landlords
     .container.flex
@@ -87,3 +87,4 @@ head
         a.mx-1(href='https://twitter.com/ICTenantsUnion' target='_blank')
           i.fab.fa-twitter.fa-2x
 script(src='/js/rating.js')
+script(src='/js/hideAlerts.js')
