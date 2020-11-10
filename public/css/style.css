@@ -190,19 +190,28 @@ p {
 /* Card Body Display */
 .card-body-tab {
     line-height: 1.4rem;
-    display:none;
-    /* max-height: 0;
+     max-height: 0px;
     overflow: hidden;
-    transition: max-height .5s ease-out; */
+    transition: max-height .4s ease-out;  
 }
 
 .active-card {
     padding: 6px;
-    display: inline-block;
-    /* max-height: 648px;
-    transition: max-height .5s ease-in; */
-
+    max-height: 648px;
+    transition: max-height 1.5s ease-in; 
+    /* animation: appear 1.2s ease-in; */
 }
+
+@keyframes appear {
+    0% {
+        opacity: .0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 .active :first-child{
     color: var(--primary-color);
@@ -581,6 +590,7 @@ footer {
     .flex-row {
         flex-direction: column;
     }
+    
     .flex-row > .mx-5 {
         margin: 0 2rem;
     }

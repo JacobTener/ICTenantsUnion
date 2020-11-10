@@ -110,7 +110,7 @@ exports.deleteRatings = async (req, res, next) => {
 
         await rating.remove();
 
-        return res.redirect('/ratings/admin')
+        return res.redirect('/ratings/admin/all')
     }
     catch(err){
         return res.status(500).json({
@@ -228,7 +228,7 @@ function email(rating) {
 
         // HTML body
         html: `<p>Landlord: <b>${rating.landlord}</b><br> Rating: ${rating.stars} <br>Review Description: ${rating.description}</p>
-        <br><br> Go to ictenantsunion.herokuapp.com/ratings/admin to log in and verify!`
+        <br><br> Go to <a href="https://ictenantsunion.herokuapp.com/ratings/admin">ictenantsunion.herokuapp.com/ratings/admin</a> to log in and verify!`
     
     };
     
