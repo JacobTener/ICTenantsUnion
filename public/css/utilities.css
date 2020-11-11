@@ -1,4 +1,3 @@
-
 /* Utilities */
 .flex-row {
     display: flex;
@@ -84,7 +83,7 @@ label {
     -ms-flex-align: stretch;
     align-items: stretch;
     width: 100%;
-  }
+}
 
 .form-control {
     display: block;
@@ -98,7 +97,7 @@ label {
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+}
 
 .text-center {
     text-align: center;
@@ -111,6 +110,7 @@ label {
 .text-md {
     font-size: 13.8px;
 }
+
 .b-top {
     border-top: var(--light-color) 1px solid;
 }
@@ -221,10 +221,7 @@ span {
     margin-bottom: 5rem;
 }
 
-
-
-/* 
-Padding */
+/* Padding */
 .py-1 {
     padding: 1rem 0;
 }

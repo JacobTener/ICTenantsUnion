@@ -15,14 +15,17 @@
     margin: 0;
     padding: 0;
 }
+
 html {
     min-height: 100%;
     position: relative;
 }
+
 .body {
     color: #333;
     line-height: 1.6;
 }
+
 ul {
     list-style-type: none;
 }
@@ -50,6 +53,7 @@ p {
     position: relative;
     padding-bottom: 180px; /* height of your footer */
 }
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -98,7 +102,6 @@ p {
 
 /* Hero */
 .hero {    
-
     background: linear-gradient( rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) ), url("../img/nate-watson-Ib_nblJ2Jis-unsplash.jpg") center;
     height: 550px;
 }
@@ -122,6 +125,7 @@ p {
     background-color: var(--white);
     padding: 30px;
 }
+
 .showcase .flex {
     display: flex;
     justify-content: center;
@@ -137,11 +141,13 @@ p {
     flex: 1;
     
 }
+
 .showcase-text {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
+
 .showcase-text h1, .showcase-text h3{
     color: var(--primary-color);
 }
@@ -163,6 +169,7 @@ p {
 .mission li, .action li {
     padding-bottom: 4px;
 }
+
 /* Cards */
 .card-headings {
     display: flex;
@@ -176,7 +183,6 @@ p {
 
 .headings-dark h4 {
     color:  #d3aa96;
-
 }
 
 .card-headings .btn-outline-border {
@@ -214,8 +220,6 @@ p {
     }
 }
 
-
-
 .active :first-child{
     color: var(--primary-color);
    
@@ -246,9 +250,6 @@ p {
     max-height: 512px;
     transition: max-height .5s ease-in;
 }
-
-
-
 
 /* Crossbar */
 .crossbar {
@@ -356,7 +357,7 @@ th {
     }
 }
 
- 
+
 /* Forward  From https://ianlunn.github.io/Hover/ */
 .hvr-forward {
     display: inline-block;
@@ -369,6 +370,7 @@ th {
     -webkit-transition-property: transform;
     transition-property: transform;
   }
+
   .hvr-forward:hover, .hvr-forward:focus, .hvr-forward:active {
     -webkit-transform: translateX(8px);
     transform: translateX(8px);
@@ -387,6 +389,7 @@ th {
     -webkit-transition-property: transform;
     transition-property: transform;
   }
+
   .hvr-float-shadow:before {
     pointer-events: none;
     position: absolute;
@@ -405,17 +408,20 @@ th {
     -webkit-transition-property: transform, opacity;
     transition-property: transform, opacity;
   }
+
   .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
     /* move the element up by 5px */
   }
+
   .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
     opacity: 1;
     -webkit-transform: translateY(5px);
     transform: translateY(5px);
     /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
   }
+
   .hvr-grow {
     cursor: pointer;
     display: inline-block;
@@ -428,6 +434,7 @@ th {
     -webkit-transition-property: transform;
     transition-property: transform;
   }
+
   .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -439,14 +446,11 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-   
 }
-
 
 
 /* Tablets and under */
 @media(max-width: 768px) {
-
     .wrapper {
         padding-bottom: 220px;
     }
@@ -461,8 +465,6 @@ footer {
         gap: 0px;
     }
     
-    
-
     .tablet-second {
         order:2;
     }
@@ -475,6 +477,7 @@ footer {
     .showcase-img{
         margin: 1rem;
     }
+
     .flex-hide {
         display:none;
     }
@@ -545,7 +548,6 @@ footer {
 
 /* Mobile */
 @media(max-width: 500px) {
-    
     .wrapper {
         padding-bottom: 280px;
     }
@@ -621,14 +623,7 @@ footer {
         margin-left: 2rem;
     }
     
-    .adm-delete, .adm-delete-body {
-        display: none;
-    }
-
     .adm-all-verify, .adm-all-verify-body {
         display: none;
     }
-
-
-
 }

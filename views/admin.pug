@@ -26,7 +26,7 @@ head
   // Showcase
   section.showcase.about-showcase.b-top
     .container.flex
-      h1.mb-2 Verify Reviews
+      h1.mb-2 Approve Reviews
     .container.flex
       table.table.table-striped
         thead
@@ -36,7 +36,6 @@ head
             th(scope='col') Description
             th.date-header(scope='col') Date
             th(scope='col').verify Approve
-            th(scope='col').adm-delete Delete
         tbody
         each rating, i in ratings
           tr
@@ -48,15 +47,11 @@ head
               form(action=`/ratings/admin/verify/${rating.id}` method='POST')
                 a.verify-tag.table-details.hvr-grow
                   i.fas.fa-2x.fa-check
-            td.adm-delete-body
-              form(action=`/ratings/delete/${rating.id}?_method=DELETE` method='POST')
-                a.del-tag.table-details.hvr-float-shadow
-                  i.fas.fa-2x.fa-trash-alt
               
     .container.flex
       form(action='/ratings/admin/logout?_method=DELETE' method='POST')
         button.btn.btn-primary.sub-btn(type='submit') Log Out  
-      a.btn.btn-blk-outline.m-2(href='/ratings/admin/all').sm-order-1 See all Reviews    
+      a.btn.btn-blk-outline.m-2(href='/ratings/admin/all').sm-order-1 See all Reviews  
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div
