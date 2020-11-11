@@ -1,8 +1,6 @@
 //Module imports
 require('dotenv/config');
-const http = require("http");
 const path = require("path");
-const fs = require("fs");
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -11,20 +9,8 @@ const initializePassport = require('./passport-config');
 const flash = require('connect-flash');
 const session = require('express-session');
 const methodOverride = require('method-override')
+const User = require('./models/User');
 
-users = [
-  {
-    "id": 1,
-    "username": "admin",
-    "password": "$2a$04$luBbjJj6saTEEkQqyPpptuBXmM3Ymv.h26pHjb3VuUr6zlRINZGdC"
-  }
-]
-
-initializePassport(
-  passport,
-  username => users.find(user => user.username === username),
-  id => users.find(user => user.id === id)
-);
 
 //Connect to DB
 const uri = process.env.DB_CONNECTION;
@@ -37,6 +23,14 @@ let db = mongoose.connection;
 db.on('error', err => {
   console.log(err)
 })
+
+
+initializePassport(
+  passport,
+  username =>  User.findOne({username: username}),
+  id =>  User.findOne({id: id})
+);
+
 
 //Initialize app
 var app = express();
@@ -69,14 +63,12 @@ app.use((req, res, next) => {
   next();
 });
 
-
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
 
 //Override middleware for delete req
 app.use(methodOverride('_method'));
-
 
 //Routes
 app.use('/ratings', ratingRoutes);
@@ -90,7 +82,6 @@ app.use(express.static("public",
 app.use(function(req,res){
   res.status(404).render('404');
 });
-
 
 const port = process.env.PORT || 5000;
 

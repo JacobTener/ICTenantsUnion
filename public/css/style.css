@@ -190,21 +190,24 @@ p {
 /* Card Body Display */
 .card-body-tab {
     line-height: 1.4rem;
-     max-height: 0px;
+    max-height: 0px;
     overflow: hidden;
-    transition: max-height .4s ease-out;  
+    transition: max-height .4s ease-out;
+    animation: fade .5 ease-out;
+    opacity: .0;  
 }
 
 .active-card {
     padding: 6px;
     max-height: 648px;
-    transition: max-height 1.5s ease-in; 
-    /* animation: appear 1.2s ease-in; */
+    transition: max-height 1.2s ease-in; 
+    animation: appear 1s ease-in; 
+    opacity: 1;
 }
 
 @keyframes appear {
     0% {
-        opacity: .0;
+        opacity: 0;
     }
     100% {
         opacity: 1;

@@ -1,4 +1,5 @@
 const Rating = require('../models/Rating');
+const User = require('../models/User');
 const nodemailer = require('nodemailer');
 
 
@@ -8,6 +9,10 @@ const nodemailer = require('nodemailer');
 // @access Public
 exports.getRatings = async (req, res, next) => {
     try {
+        const user = await User.find({id:1});
+        if(user != null) {
+            console.log(user);
+        }
         const ratings = await Rating.aggregate()
         .match({
             verified: true
