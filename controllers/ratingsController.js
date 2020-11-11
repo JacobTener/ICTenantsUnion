@@ -74,7 +74,7 @@ exports.postRatings = async (req, res, next) => {
 
         const savedRating = await rating.save();
         email(rating);
-        req.flash('success', 'Review Submitted! Thank you.');
+        req.flash('success', 'Review Submitted! Thank you. Please reach out with any pressing concerns via email directly.');
         res.redirect('/ratings');
     }
     catch(err){
