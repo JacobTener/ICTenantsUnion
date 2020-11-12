@@ -34,7 +34,7 @@ head
     .container.flex
       form(method="POST", action='/ratings')   
         .container.flex    
-          label(for='landlord').flex-col Landlord:
+          label(for='landlord').flex-col Landlord/Rental Company:
           if landlord != null
             input#landlord(type='text' name='landlord' value=`${landlord}`).flex-col-lg.form-control.my-1
           else 
