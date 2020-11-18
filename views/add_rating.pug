@@ -87,6 +87,8 @@ head
             input#email(type='email' name='email' value=`${email}`).flex-col-lg.form-control.my-1.email
           else
             input#email(type='email' name='email' placeholder='example@email.com').flex-col-lg.form-control.my-1.email
+        //- .container.flex 
+        //-   p.text-sm This will not be displayed
         .container.flex
           label(for='description').flex-col Description:
           textarea#description(name='description').flex-col-lg.form-control.my-1
@@ -96,7 +98,7 @@ head
           a.btn.btn-blk-outline.m-2(href='/ratings') Back to Reviews
           input.btn.btn-primary.sub-btn(type='submit', value='Submit Review')
         .container.flex 
-          p.text-sm (To avoid spam, your review must be approved before it is displayed)
+          p.text-md ICTU will not try to contact you or display your email
   footer.footer.bg-dark.py-4
     .container.grid.grid-3
       div

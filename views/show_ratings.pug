@@ -28,10 +28,10 @@ head
     .container.flex
         if successes
           for success in successes
-            div.alert.alert-success.temp #{ success }
+            div.alert.alert-success #{ success }
         if errors
           for error, i in errors
-            div.alert.alert-danger.temp #{ error }
+            div.alert.alert-danger #{ error }
     .container.flex
       h1.mb-1.text-center Anonymous Reviews of Johnson County Landlords
     .container.flex
