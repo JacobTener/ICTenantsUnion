@@ -204,8 +204,8 @@ function email(rating) {
             host: "smtp.mailtrap.io",
             port: 2525,
             auth: {
-                user: "150db1bab12ef1",
-                pass: "eb2deb722f4b1c"
+                user: process.env.MAILTRAP_USER,
+                pass: process.env.MAILTRAP_PASS
             }
         },
         {
