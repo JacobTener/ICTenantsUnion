@@ -1,4 +1,4 @@
 # ICTenantsUnion
 Website design for the Iowa City Tenants Union
 
-Access at [ictenantsunion.com]
+Access at [ictenantsunion.com](ictenantsunion.com)
