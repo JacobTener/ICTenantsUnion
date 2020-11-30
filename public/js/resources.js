@@ -1,3 +1,5 @@
+//Client side JS to expand and collapse Tenant Resource cards based on "active" status
+
 const fairHousing = document.getElementById('fair-housing');
 const securityDeposit = document.getElementById('security-deposit');
 const covid = document.getElementById('covid19');

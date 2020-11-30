@@ -1,5 +1,4 @@
 const Rating = require('../models/Rating');
-const User = require('../models/User');
 const nodemailer = require('nodemailer');
 
 
@@ -122,7 +121,7 @@ exports.deleteRatings = async (req, res, next) => {
 
 }
 
-// @desc Get all ratings for a landlord
+// @desc Get verified ratings for a landlord
 // @route Get /ratings/:id
 // @access Public
 exports.indvRatings = async (req, res, next) => {
@@ -144,7 +143,7 @@ exports.indvRatings = async (req, res, next) => {
 
 // @desc Get all unverified ratings
 // @route Get /ratings/admin
-// @access Public
+// @access Admin
 exports.admin = async (req, res, next) => {
     try {
         const ratings = await Rating.find({verified : false})
@@ -162,6 +161,10 @@ exports.admin = async (req, res, next) => {
     }
 }
 
+
+// @desc Get all ratings
+// @route Get /ratings/admin/all
+// @access Admin
 exports.adminAll = async (req, res, next) => {
     try {
         const ratings = await Rating.find({})
@@ -179,9 +182,14 @@ exports.adminAll = async (req, res, next) => {
     }
 }
 
+
+// @desc Get login page 
+// @route Get /ratings/admin/login
+// @access Public
 exports.adminLogin = async (req, res, next) => {
     return res.render('login');
 }
+
 
 // @desc Update a rating
 // @route Post /ratings/admin/verify/:id
@@ -198,6 +206,8 @@ exports.updateRating = async (req, res, next) => {
     }
 }
 
+
+// Send rating via nodemailer
 function email(rating) {
     var transporter = nodemailer.createTransport(
         {

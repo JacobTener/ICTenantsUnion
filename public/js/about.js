@@ -1,3 +1,6 @@
+// Client side JS to transition between active tabs on the "About Us" page based on the header clicked
+
+
 const history = document.getElementById('history');
 const present = document.getElementById('present');
 const purpose = document.getElementById('purpose');

@@ -24,7 +24,7 @@ db.on('error', err => {
   console.log(err)
 })
 
-
+//Start passport with functions to find user from DB
 initializePassport(
   passport,
   username =>  User.findOne({username: username}),

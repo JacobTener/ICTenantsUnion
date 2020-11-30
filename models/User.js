@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-//schema
 
+// Schema for a user within Mongo DB
 const userSchema = mongoose.Schema({
     id : {
         type: Number,

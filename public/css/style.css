@@ -47,11 +47,12 @@ p {
 }
 
 .wrapper {
-    min-height: 100vh; /* will cover the 100% of viewport */
+    min-height: 100vh; 
     overflow: hidden;
     display: block;
     position: relative;
-    padding-bottom: 180px; /* height of your footer */
+    /* Place footer at the bottom on all screens */
+    padding-bottom: 180px; 
 }
 
 .container {
@@ -72,6 +73,7 @@ p {
     height: 60px;
     width: auto;
 }
+
 
 /* Navbar */
 .navbar {
@@ -100,6 +102,7 @@ p {
     justify-content: space-between;
 }
 
+
 /* Hero */
 .hero {    
     background: linear-gradient( rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) ), url("../img/nate-watson-Ib_nblJ2Jis-unsplash.jpg") center;
@@ -119,6 +122,7 @@ p {
 .hero-text p {
     font-style: italic;
 }
+
 
 /* Showcase */
 .showcase {
@@ -169,6 +173,7 @@ p {
 .mission li, .action li {
     padding-bottom: 4px;
 }
+
 
 /* Cards */
 .card-headings {
@@ -251,6 +256,7 @@ p {
     transition: max-height .5s ease-in;
 }
 
+
 /* Crossbar */
 .crossbar {
     background-color: rgb(245, 243, 243);
@@ -258,6 +264,7 @@ p {
     text-align: center;
     padding: 1rem;
 }
+
 
 /* Resources */
 .full-btn {
@@ -277,6 +284,7 @@ p {
 .move-in-titles, .move-in-text {
     text-align: left;
 }
+
 
 /* Ratings Table */
 table {
@@ -331,6 +339,7 @@ th {
 .short-text {
     display: none;
 }
+
 
 /* Add rating */
 #description {
@@ -439,7 +448,8 @@ th {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
-
+ 
+  
 /* Footer */
 footer {
     background-color: var(--primary-color);

@@ -1,4 +1,7 @@
-/* Utilities */
+
+/* Utilities classes to be reused when needed*/
+
+
 .flex-row {
     display: flex;
     gap: 10px;

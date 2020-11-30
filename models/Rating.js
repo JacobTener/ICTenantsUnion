@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
-//schema
 
+// Schema for a rating within Mongo DB
 const ratingSchema = mongoose.Schema({
     landlord : {
         type: String,
         required: [true, 'Specify a landlord please'],
-        //match: ['^(\s)*[A-Za-z]+((\s)?((\'|\-|\.)?([A-Za-z])+))*(\s)*$']
     },
     stars : {
         type: Number,
@@ -15,7 +14,6 @@ const ratingSchema = mongoose.Schema({
     email : {
         type: String,
         required: [true, 'Add your email'],
-        //match: ['/^\S+@\S+\.\S+$/', 'There is an error in the entered email address']
     },
     description : {
         type: String,
