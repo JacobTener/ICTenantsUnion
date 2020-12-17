@@ -43,7 +43,7 @@ head
             td #{rating.landlord}
             td #{rating.stars}
             td #{rating.description}
-            td.date-body #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
+            td.date-body #{rating.date.getMonth() + 1}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
             td.adm-all-verify-body 
                 if rating.verified 
                     p Yes
