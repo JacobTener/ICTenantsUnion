@@ -26,25 +26,28 @@ head
   // Showcase
   section.showcase.about-showcase.b-top
     .container.flex
-      h1.mb-2 Reviews for #{ratings[0].landlord}
+      h1.mb-2.text-center Reviews for #{ratings[0].landlord}
     .container.flex
       table.table.table-striped
         thead
           tr
             th(scope='col') Landlord
-            th(scope='col') Rating
+            th.date-header(scope='col') Rating
             th(scope='col') Description
             th.date-header(scope='col') Date
         tbody
         each rating, i in ratings
           tr
             td #{rating.landlord}
-            td #{rating.stars}
+              br
+              br
+              .short-text Rating: #{rating.stars}
+            td.date-body #{rating.stars}
             td #{rating.description}
               br
               br
-              .short-text #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
-            td.date-body #{rating.date.getMonth()}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
+              .short-text #{rating.date.getMonth() + 1}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
+            td.date-body #{rating.date.getMonth() + 1}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
     .container.flex
       a.btn.btn-blk-outline.m-2.back-btn(href='/ratings') Back to Reviews
       a.btn.m-2(href='/ratings/add?name=' + ratings[0].landlord) Add a review for #{ratings[0].landlord}
