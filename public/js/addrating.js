@@ -1,3 +1,5 @@
+// Client side js to propogate landlord info in case of validation error
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 

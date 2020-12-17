@@ -1,8 +1,7 @@
-//Get Input Element
+// Client side JS to filter landlords in real time based on name entry
+
 let filterLandlords = document.getElementById("filterLandlords");
-//Add event listener
 filterLandlords.addEventListener("input", (e) => {
-  //Get value of input
   let filterValue = document
     .getElementById("filterLandlords")
     .value.toUpperCase();

@@ -1,3 +1,5 @@
+//Client side JS to have flashes disappear after 3.8 seconds
+
 const tempDivs = document.querySelectorAll('.temp');
 
 
