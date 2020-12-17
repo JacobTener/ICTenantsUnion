@@ -44,7 +44,7 @@ head
         thead
           tr
             th(scope='col') Landlord/Rental Company
-            th(scope='col') # of Reviews
+            th.mobile-sm(scope='col') # of Reviews
             th(scope='col') Avg. Rating
             th.date-header(scope='col') Last Review On
             th(scope='col') 
@@ -54,7 +54,7 @@ head
           each rating, i in ratings
             tr.table-row
               td.landlord(scope='row') #{rating._id}
-              td.count #{rating.count}  
+              td.mobile-sm.count #{rating.count}  
               td.avg-stars #{rating.avgstars}       
               td.lst-date.date-body #{rating.lstdate}
               td

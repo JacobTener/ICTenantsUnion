@@ -637,3 +637,9 @@ footer {
         display: none;
     }
 }
+
+@media(max-width: 400px) {
+    .mobile-sm {
+        display: none;
+    }
+}
