@@ -41,12 +41,12 @@ head
             td #{rating.landlord}
               br
               br
-              .short-text Rating: #{rating.stars}
-            td.date-body #{rating.stars}
-            td #{rating.description}
+              .short-text Rating: #{rating.stars}/5
               br
               br
               .short-text #{rating.date.getMonth() + 1}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
+            td.date-body #{rating.stars}
+            td #{rating.description}      
             td.date-body #{rating.date.getMonth() + 1}/#{rating.date.getDate()}/#{rating.date.getFullYear()}
     .container.flex
       a.btn.btn-blk-outline.m-2.back-btn(href='/ratings') Back to Reviews
